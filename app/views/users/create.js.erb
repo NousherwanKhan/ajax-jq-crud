@@ -4,5 +4,4 @@ alert('fill all field');
 
 <% else %>
 $("#userTable").prepend("<%= escape_javascript render('index_user_row', user: @user) %>");
-
 <% end %>
