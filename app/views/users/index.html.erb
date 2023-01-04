@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Users</h1>
+<%= link_to 'New User' , new_user_path, data: {bs_toggle:"modal", bs_target:"#newUserModal"}, remote: true, class:'btn btn-secondary mb-3'%>
+
+<%= raw pagy_bootstrap_nav(@pagy) %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>Contact</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody id="userTable">
+    <% @users.each do |user| %>
+      <%= render 'index_user_row', user: user %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<!-- Modal -->
+<div class="modal fade" id="newUserModal" tabindex="-1" aria-labelledby="newUserModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="newUserModalLabel">Create New User</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div id="newUserForm">
+
+      </div>
+      
+    </div>
+  </div>
+</div>

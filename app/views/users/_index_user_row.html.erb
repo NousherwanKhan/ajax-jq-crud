@@ -1,0 +1,20 @@
+<tr id="index_user_row <% user.id %>">
+    <td>
+        <%= user.name %>
+    </td>
+    <td>
+        <%= user.email %>
+    </td>
+    <td>
+        <%= user.address %>
+    </td>
+    <td>
+        <%= user.contact %>
+    </td>
+    <td class="d-flex gap-1">
+        <%= link_to 'Show' , user, class:'btn btn-warning' %>
+            <%= link_to 'Edit' , edit_user_path(user), class:'btn btn-info' %>
+                <%= button_to 'Destroy' , user, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn
+                    btn-danger' %>
+    </td>
+</tr>
