@@ -1,0 +1,19 @@
+<% if @club.errors.any? %>
+    $("#nameError").html('');
+    $("#nameError").append('<% @club.errors.full_messages_for(:name).each do |message| %>');
+    $("#nameError").append('<li class="text-danger"><%= message %></li>');
+    $("#nameError").append('<% end %>');
+    $("#countryError").html('');
+    $("#countryError").append('<% @club.errors.full_messages_for(:country).each do |message| %>');
+    $("#countryError").append('<li class="text-danger"><%= message %></li>');
+    $("#countryError").append('<% end %>');
+    $("#trophiesError").html('');
+    $("#trophiesError").append('<% @club.errors.full_messages_for(:trophies).each do |message| %>');
+    $("#trophiesError").append('<li class="text-danger"><%= message %></li>');
+    $("#trophiesError").append('<% end %>');
+
+<% else %>
+
+window.location = "<%= clubs_path %>";
+
+<% end %>

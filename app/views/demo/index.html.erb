@@ -1,1 +1,13 @@
-<%= link_to 'User', users_path, class:'btn btn-primary mt-5' %>
+
+<div id="test">
+    <p>This is first content</p>
+</div>
+<button id='btn'> Click to Add</button>
+<p id='addThis' hidden>This is added data</p>
+
+<script>
+    $('#btn').click(function() {
+        $('#test').html('<%= escape_javascript(render "add") %>');
+});
+
+</script>

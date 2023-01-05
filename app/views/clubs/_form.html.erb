@@ -1,0 +1,26 @@
+<%= form_with(model: club, local: false) do |form| %>
+
+  <div class="field col-5 mb-3">
+    <%= form.label :name %>
+    <%= form.text_field :name, class:'form-control' %>
+    <span id='nameError'> </span>
+  </div>
+
+  <div class="field col-5 mb-3">
+    <%= form.label :country %>
+    <%= form.text_field :country, class:'form-control' %>
+    <span id='countryError'> </span>
+
+  </div>
+
+  <div class="field col-5 mb-3">
+    <%= form.label :trophies %>
+    <%= form.number_field :trophies, class:'form-control' %>
+    <span id='trophiesError'> </span>
+
+  </div>
+
+  <div class="actions">
+    <%= form.submit class:'btn btn-primary' %>
+  </div>
+<% end %>

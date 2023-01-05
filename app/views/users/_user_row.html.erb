@@ -1,0 +1,19 @@
+<tr id="user_row_<%= user.id %>">
+    <td>
+        <%= user.name %>
+    </td>
+    <td>
+        <%= user.email %>
+    </td>
+    <td>
+        <%= user.address %>
+    </td>
+    <td>
+        <%= user.contact %>
+    </td>
+    <td class="d-flex gap-1">
+        <%= link_to 'Show' , user, class:'btn btn-warning',data: {bs_toggle:"modal", bs_target:"#showUserModal"}, remote: true %>
+        <%= link_to 'Edit' , edit_user_path(user),data: {bs_toggle:"modal", bs_target:"#editUserModal"}, remote: true, class:'btn btn-info' %>
+        <%= button_to 'Destroy' , user, method: :delete, data: { confirm: 'Are you sure?'},:remote => true, class:'btn btn-danger' %>
+    </td>
+</tr>

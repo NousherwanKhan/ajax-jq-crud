@@ -1,40 +1,33 @@
 <%= form_with(model: user, local: false) do |form| %>
 
   <div class="modal-body">
-    <% if user.errors.any? %>
-      <div id="error_explanation">
-        <h2>
-          <%= pluralize(user.errors.count, "error" ) %> prohibited this user from being saved:
-        </h2>
-
-        <ul>
-          <% user.errors.each do |error| %>
-            <li>
-              <%= error.full_message %>
-            </li>
-            <% end %>
-        </ul>
-      </div>
-    <% end %>
       <div class="field form-group mb-3 mt-3">
         <%= form.label :name %>
           <%= form.text_field :name, class:'form-control' %>
+        <ul id="nameError">
+        </ul>
       </div>
       <div class="field form-group mb-3 mt-3">
         <%= form.label :email %>
           <%= form.text_field :email, class:'form-control' %>
+          <ul id="emailError">
+          </ul>
       </div>
       <div class="field form-group mb-3 mt-3">
         <%= form.label :address %>
           <%= form.text_field :address, class:'form-control' %>
+          <ul id="addressError">
+          </ul>
       </div>
       <div class="field form-group mb-3 mt-3">
         <%= form.label :contact %>
           <%= form.text_field :contact, class:'form-control' %>
+          <ul id="contactError">
+          </ul>
       </div>
   </div>
   <div class="modal-footer">
     <%= form.submit class:'btn btn-primary' %>
-    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-secondary closeModal" data-bs-dismiss="modal">Close</button>
   </div>
 <% end %>

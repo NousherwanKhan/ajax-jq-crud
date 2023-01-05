@@ -18,7 +18,7 @@
 
   <tbody id="userTable">
     <% @users.each do |user| %>
-      <%= render 'index_user_row', user: user %>
+      <%= render 'user_row', user: user %>
     <% end %>
   </tbody>
 </table>
@@ -31,12 +31,44 @@
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="newUserModalLabel">Create New User</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close closeModal" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div id="newUserForm">
 
+      </div> 
+    </div>
+  </div>
+</div>
+
+<!-- EDIT MODAL -->
+<div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="editUserModalLabel">Edit User</h1>
+        <button type="button" class="btn-close closeModal" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      
+      <div id="editUserForm">
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- SHOW MODAL -->
+<div class="modal fade" id="showUserModal" tabindex="-1" aria-labelledby="showUserModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="showUserModalLabel">User Profile</h1>
+        <button type="button" class="btn-close closeModal" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div id="showUserDetails">
+
+      </div>
+
     </div>
   </div>
 </div>

@@ -1,0 +1,10 @@
+<tr id='club_row_<%= club.id %>'>
+        <td><%= club.name %></td>
+        <td><%= club.country %></td>
+        <td><%= club.trophies %></td>
+        <td class='d-flex gap-1'>
+        <%= link_to 'Show', club, class:'btn btn-warning', remote: true %>
+        <%= link_to 'Edit', edit_club_path(club), class:'btn btn-info', remote: true, id:'edit_club_'+ club.id.to_s %>
+        <%= link_to 'Destroy', club, method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class:'btn btn-danger' %>
+        </td>
+</tr>

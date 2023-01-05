@@ -21,3 +21,6 @@ import $ from 'jquery' ;
 // global.$ = jQuery;
 window.jQuery = $;
 window.$ = $;
+
+// import jquery from "jquery";
+// window.$ = window.jquery = jquery;

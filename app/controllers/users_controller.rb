@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   # GET /users or /users.json
   def index
-    @pagy, @users = pagy(User.all)
+    @pagy, @users = pagy(User.order('created_at DESC'))
   end
 
   # GET /users/1 or /users/1.json
@@ -25,9 +25,9 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.js
         format.html { redirect_to user_url(@user), notice: "User was successfully created." }
         format.json { render :show, status: :created, location: @user }
+        format.js
       else
         format.js
         format.html { render :new, status: :unprocessable_entity }
@@ -42,7 +42,9 @@ class UsersController < ApplicationController
       if @user.update(user_params)
         format.html { redirect_to user_url(@user), notice: "User was successfully updated." }
         format.json { render :show, status: :ok, location: @user }
+        format.js
       else
+        format.js
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
@@ -52,10 +54,10 @@ class UsersController < ApplicationController
   # DELETE /users/1 or /users/1.json
   def destroy
     @user.destroy
-
     respond_to do |format|
       format.html { redirect_to users_url, notice: "User was successfully destroyed." }
       format.json { head :no_content }
+      format.js  { render layout: false }
     end
   end
 
